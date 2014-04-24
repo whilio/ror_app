@@ -1,9 +1,14 @@
-h1 Basic FizzBuzz test for beginners
+h1 Advanced FizzBuzz test for beginners
 p
-  ' With base class
-  span.label.label-warning Fixnum
+  ' With own class
+  span.label.label-warning FizzBuzz
   '
-  | redefine antipattern.
+  | definition and usage.
+hr
 p
   - @result.each do |result|
-    span.btn.btn-large class="btn-#{/\A\d+\Z/.match(result) ? 'danger' : 'success'}" style='margin:4px' = result
+    h4 = result[:input]
+    p
+      - result[:output].each do |item|
+        span class=%i[btn btn-large] class="btn-#{/\A\d+\Z/.match(item) ? 'danger' : 'success'}" style='margin:4px' = item
+    hr

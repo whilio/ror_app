@@ -2,7 +2,7 @@ RorApp::Application.routes.draw do
   get 'page', to: 'page#index', as: :page
   get 'about', to: 'page#about', as: :about
   get 'info', to: 'page#info', as: :info
-  get 'test/:a/:b', to: 'page#test'
+  get 'test/*c', to: 'page#test'
   root 'page#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with 'rake routes'.
