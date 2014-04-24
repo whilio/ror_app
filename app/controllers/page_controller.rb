@@ -21,4 +21,13 @@ class PageController < ApplicationController
         output: object.transmute! }
     end
   end
+
+  def nightmare
+    a, b = params[:a].to_i, params[:b].to_i
+    range = (a > b ? (b..a) : (a..b)).map(&:to_i)
+    @input = params[:c].split('/').map(&:to_i)
+    object = FizzBuzz.new(range, params[:c].split('/').map(&:to_i))
+    @result = object.nightmare!
+    @filtered_input = object.divs
+  end
 end

@@ -1,0 +1,10 @@
+h1 Nightmare fizzBuzz
+p
+  ' Input received from request:
+  = @input
+p
+  ' Input filtered by task logic:
+  = @filtered_input
+p
+  - @result.each do |result|
+    span.btn.btn-large class="btn-#{/\A\d+\Z/.match(result) ? 'danger' : 'success'}" style='margin:4px' = result
