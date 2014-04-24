@@ -1,8 +1,13 @@
 RorApp::Application.routes.draw do
+  get 'page', to: 'page#index', as: :page
+  get 'about', to: 'page#about', as: :about
+  get 'info', to: 'page#info', as: :info
+  get 'test', to: 'page#test', as: :test
+  root 'page#home'
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # See how all your routes lay out with 'rake routes'.
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with 'root'
   # root 'welcome#index'
 
   # Example of regular route:
