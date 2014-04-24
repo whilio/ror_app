@@ -12,5 +12,7 @@ class PageController < ApplicationController
   end
 
   def test
+    a, b = params[:a].to_i, params[:b].to_i
+    @result = (a > b ? (b..a) : (a..b)).map(&:fizzBuzz)
   end
 end

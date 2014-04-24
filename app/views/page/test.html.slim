@@ -1,2 +1,9 @@
-h1 Page#test
-p Find me in app/views/page/test.html.slim
+h1 Basic FizzBuzz test for beginners
+p
+  ' With base class
+  span.label.label-warning Fixnum
+  '
+  | redefine antipattern.
+p
+  - @result.each do |result|
+    span.btn.btn-large class="btn-#{/\A\d+\Z/.match(result) ? 'danger' : 'success'}" style='margin:4px' = result
