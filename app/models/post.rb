@@ -4,10 +4,10 @@ class Post < ActiveRecord::Base
 
   def self.create_post(number)
     number.times do
-      uids = User.all.map(&:id)
-      Post.create(title: Faker::Lorem.sentence,
-                  content: Faker::Lorem.paragraph(2 + rand(8)),
-                  user_id: uids.sample)
+      uids = User.all.pluck(:id)
+      create(title: Faker::Lorem.sentence,
+             content: Faker::Lorem.paragraph(2 + rand(8)),
+             user_id: uids.sample)
     end
   end
 end
