@@ -49,9 +49,7 @@ html lang="en"
               p = link_to 'Sign up', :new_user_registration, class: %i[btn btn-block btn-large btn-primary]
             ul.nav.nav-list
               li.nav-header Sidebar
-              li= link_to "Link 1", "/path1"
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
+              li= link_to 'Posts index', :posts
         .span9
           = bootstrap_flash
           = yield

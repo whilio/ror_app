@@ -1,4 +1,5 @@
 RorApp::Application.routes.draw do
+  resources :posts, only: %i[index show]
   resources :comments
 
   devise_for :users
