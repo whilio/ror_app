@@ -1,4 +1,5 @@
 RorApp::Application.routes.draw do
+  devise_for :users
   get 'page', to: 'page#index', as: :page
   get 'about', to: 'page#about', as: :about
   get 'info', to: 'page#info', as: :info
