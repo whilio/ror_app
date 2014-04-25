@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :posts
+
   def self.create_user(number)
     number.times do
       create(fname: Faker::Name.first_name,

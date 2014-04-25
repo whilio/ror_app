@@ -10,3 +10,10 @@
         - banned
         - created_at
         - updated_at
+  Post:
+    :options:
+      :fields:
+        - id
+        - title
+        - content
+        - user_id
