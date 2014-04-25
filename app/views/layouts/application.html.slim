@@ -42,6 +42,11 @@ html lang="en"
       .row-fluid
         .span3
           .well.sidebar-nav
+            - if signed_in?
+              p = link_to 'Sign out', :destroy_user_session, method: :delete, class: %i[btn btn-block btn-large btn-warning]
+            - else
+              p = link_to 'Sign in', :user_session, class: %i[btn btn-block btn-large btn-success]
+              p = link_to 'Sign up', :new_user_registration, class: %i[btn btn-block btn-large btn-primary]
             ul.nav.nav-list
               li.nav-header Sidebar
               li= link_to "Link 1", "/path1"
