@@ -30,7 +30,8 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render json: @comment.post.comments }
+        format.json { render json: @comment.post.comments.to_json(select: %i[title content], include: { user: { only: :email } } ) }
+        # Дублируется в views/comments/index.json.jbuilder, при изменении обязательно проверять соответствие!
       else
         format.html { render action: 'new' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

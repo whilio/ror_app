@@ -1,4 +1,7 @@
 dl
   - for comment in @comments
-    dt = comment.title
+    dt
+      =' comment.title
+      ' by
+      span.label.label-success = comment.user.email
     dd = comment.content
