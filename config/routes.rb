@@ -1,4 +1,6 @@
 RorApp::Application.routes.draw do
+  resources :comments
+
   devise_for :users
   get 'page', to: 'page#index', as: :page
   get 'about', to: 'page#about', as: :about
