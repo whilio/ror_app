@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = params[:id].present? ? Comment.where(post_id: params[:id]) : Comment.all
   end
 
   # GET /comments/1
@@ -26,7 +26,6 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
     @comment.post_id = user_session[:post_id]
-    user_session.delete(:post_id)
 
     respond_to do |format|
       if @comment.save

@@ -46,6 +46,8 @@ gem 'faker'
 gem 'hirb'
 
 gem 'simple_form'
+gem 'skim'
+gem 'gon'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -1,6 +1,7 @@
 RorApp::Application.routes.draw do
   resources :posts, only: %i[index show]
   resources :comments
+  get 'comments_by_post/:id', to: 'comments#index'
 
   devise_for :users
   get 'page', to: 'page#index', as: :page

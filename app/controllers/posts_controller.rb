@@ -10,6 +10,8 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)
     @comment = Comment.new
     user_session[:post_id] = @post.id
+    gon.push({user_id: current_user.id,
+              post_id: @post.id})
   end
 
   private

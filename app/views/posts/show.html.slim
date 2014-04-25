@@ -1,15 +1,16 @@
 h1 = @post.title
 p = @post.content
 h2 Comments:
-dl
-  - @comments.each do |comment|
-    dt
-      =' comment.title
-      ' by
-      span.label.label-success = comment.user.email
-    dd = comment.content
+/dl
+/  - @comments.each do |comment|
+/    dt
+/      =' comment.title
+/      ' by
+/      span.label.label-success = comment.user.email
+/    dd = comment.content
+#comments-block
 h2 Add new comment
 = simple_form_for @comment do |f|
   = f.input :title
   = f.input :content
-  = f.submit
+p = link_to('Create comment asynchronously', 'javascript:void(0)', id: :ajax_submit, class: %i[btn btn-block btn-large btn-primary])
