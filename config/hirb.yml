@@ -1,0 +1,12 @@
+:output:
+  User:
+    :options:
+      :fields:
+        - id
+        - fname
+        - lname
+        - email
+        - admin
+        - banned
+        - created_at
+        - updated_at

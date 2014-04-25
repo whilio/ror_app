@@ -43,6 +43,7 @@ gem 'binding_of_caller'
 
 gem 'devise'
 gem 'faker'
+gem 'hirb'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
